@@ -1,0 +1,36 @@
+---
+title: 知识库
+description: 个人总结及网络收集的信息，仅供参考.
+template: splash
+hero:
+  tagline: 个人总结及网络收集的信息，仅供参考!
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: 开始阅读
+      link: /knowledge/
+      icon: right-arrow
+    - text: Read the Starlight docs
+      link: https://starlight.astro.build
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## 内容分类
+
+<CardGrid stagger>
+	<Card title="Linux" icon="pencil">
+		运维/开发/开源相关信息.
+	</Card>
+	<Card title="Dev" icon="add-document">
+		GO/PHP/Python等开发类信息.
+	</Card>
+	<Card title="Ad" icon="setting">
+		互联网广告相关知识.
+	</Card>
+	<Card title="Other" icon="open-book">
+		其它随笔、日志、杂谈等信息.
+	</Card>
+</CardGrid>
