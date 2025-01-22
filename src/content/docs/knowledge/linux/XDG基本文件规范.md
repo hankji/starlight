@@ -1,4 +1,6 @@
-# XDG基本文件规范
+---
+title: XDG基本文件规范
+---
 
 原文链接[basedir-spec](https://specifications.freedesktop.org/basedir-spec/latest/)
 
