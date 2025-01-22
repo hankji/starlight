@@ -39,6 +39,25 @@ export default defineConfig({
 				{ label: 'Nav导航', link: 'https://nav.weekim.com/' },
 				{ label: 'Tools', link: 'https://tools.weekim.com/' },
 			],
+			head: [
+				// Adding google analytics
+				{
+				  tag: 'script',
+				  attrs: {
+					src: `https://www.googletagmanager.com/gtag/js?id=G-VBMZBL40VQ`,
+				  },
+				},
+				{
+				  tag: 'script',
+				  content: `
+				  window.dataLayer = window.dataLayer || [];
+				  function gtag(){dataLayer.push(arguments);}
+				  gtag('js', new Date());
+
+				  gtag('config', 'G-VBMZBL40VQ');
+				  `,
+				},
+			],
 		}),
 	],
 });

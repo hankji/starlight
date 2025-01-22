@@ -37,7 +37,7 @@ title: 600条Linux命令总结
 
 ## 3. 文件和目录
 
-```none
+```bash
 cd /home 进入 '/ home' 目录'
 cd .. 返回上一级目录
 cd ../.. 返回上两级目录
@@ -77,7 +77,7 @@ Copy
 
 ## 4. 文件搜索
 
-```none
+```bash
 find / -name file1 从 '/' 开始进入根文件系统搜索文件和目录
 find / -user user1 搜索属于用户 'user1' 的文件和目录
 find /home/user1 -name \*.bin 在目录 '/ home/user1' 中搜索带有'.bin' 结尾的文件
@@ -94,7 +94,7 @@ Copy
 
 ## 5. 挂载一个文件系统
 
-```none
+```bash
 mount /dev/hda2 /mnt/hda2 挂载一个叫做hda2的盘 - 确定目录 '/ mnt/hda2' 已经存在
 umount /dev/hda2 卸载一个叫做hda2的盘 - 先从挂载点 '/ mnt/hda2' 退出
 fuser -km /mnt/hda2 当设备繁忙时强制卸载
@@ -113,7 +113,7 @@ Copy
 
 ## 6. 磁盘空间
 
-```none
+```bash
 df -h 显示已经挂载的分区列表
 ls -lSr |more 以尺寸大小排列文件和目录
 du -sh dir1 估算目录 'dir1' 已经使用的磁盘空间'
@@ -126,7 +126,7 @@ Copy
 
 ## 7. 用户和群组
 
-```none
+```bash
 groupadd group_name 创建一个新用户组
 groupdel group_name 删除一个用户组
 groupmod -n new_group_name old_group_name 重命名一个用户组
@@ -146,7 +146,7 @@ Copy
 
 ## 8. 文件的权限 使用 “+” 设置权限，使用 “-” 用于取消
 
-```none
+```bash
 ls -lh 显示权限
 ls /tmp | pr -T5 -W$COLUMNS 将终端划分成5栏显示
 chmod ugo+rwx directory1 设置目录的所有人(u)、群组(g)以及其他人(o)以读（r ）、写(w)和执行(x)的权限
@@ -176,7 +176,7 @@ Copy
 
 ## 9. 文件的特殊属性 ，使用 “+” 设置权限，使用 “-” 用于取消
 
-```none
+```bash
 chattr +a file1 只允许以追加方式读写文件
 chattr +c file1 允许这个文件能被内核自动压缩/解压
 chattr +d file1 在进行文件系统备份时，dump程序将忽略这个文件
@@ -191,7 +191,7 @@ Copy
 
 ## 10. 打包和压缩文件
 
-```none
+```bash
 bunzip2 file1.bz2 解压一个叫做 'file1.bz2'的文件
 bzip2 file1 压缩一个叫做 'file1' 的文件
 gunzip file1.gz 解压一个叫做 'file1.gz'的文件
@@ -219,7 +219,7 @@ Copy
 
 ## 11. RPM 包
 
-```none
+```bash
 rpm -ivh package.rpm 安装一个rpm包
 rpm -ivh --nodeeps package.rpm 安装一个rpm包而忽略依赖关系警告
 rpm -U package.rpm 更新一个rpm包但不改变其配置文件
@@ -252,7 +252,7 @@ Copy
 
 ## 12. YUM 软件包升级器
 
-```none
+```bash
 yum install package_name 下载并安装一个rpm包
 yum localinstall package_name.rpm 将安装一个rpm包，使用你自己的软件仓库为你解决所有依赖关系
 yum update package_name.rpm 更新当前系统中所有安装的rpm包
@@ -269,7 +269,7 @@ Copy
 
 ## 13. deb 包
 
-```none
+```bash
 dpkg -i package.deb 安装/更新一个 deb 包
 dpkg -r package_name 从系统删除一个 deb 包
 dpkg -l 显示系统中所有已经安装的 deb 包
@@ -293,7 +293,7 @@ Copy
 
 ## 14. 查看文件内容
 
-```none
+```bash
 cat file1 从第一个字节开始正向查看文件的内容
 tac file1 从最后一行开始反向查看一个文件的内容
 more file1 查看一个长文件的内容
@@ -307,7 +307,7 @@ Copy
 
 ## 15. 文本处理
 
-```none
+```bash
 cat file1 file2 ... | command <> file1_in.txt_or_file1_out.txt general syntax for text manipulation using PIPE, STDIN and STDOUT
 cat file1 | command( sed, grep, awk, grep, etc...) > result.txt 合并一个文件的详细说明文本，并将简介写入一个新文件中
 cat file1 | command( sed, grep, awk, grep, etc...) >> result.txt 合并一个文件的详细说明文本，并将简介写入一个已有的文件中
@@ -345,7 +345,7 @@ Copy
 
 ## 16. 字符设置和文件格式转换
 
-```none
+```bash
 dos2unix filedos.txt fileunix.txt 将一个文本文件的格式从MSDOS转换成UNIX
 unix2dos fileunix.txt filedos.txt 将一个文本文件的格式从UNIX转换成MSDOS
 recode ..HTML < page.txt > page.html 将一个文本文件转换成html
@@ -356,7 +356,7 @@ Copy
 
 ## 17. 文件系统分析
 
-```none
+```bash
 badblocks -v /dev/hda1 检查磁盘hda1上的坏磁块
 fsck /dev/hda1 修复/检查hda1磁盘上linux文件系统的完整性
 fsck.ext2 /dev/hda1 修复/检查hda1磁盘上ext2文件系统的完整性
@@ -372,7 +372,7 @@ Copy
 
 ## 18. 初始化一个文件系统
 
-```none
+```bash
 mkfs /dev/hda1 在hda1分区创建一个文件系统
 mke2fs /dev/hda1 在hda1分区创建一个linux ext2的文件系统
 mke2fs -j /dev/hda1 在hda1分区创建一个linux ext3(日志型)的文件系统
@@ -385,7 +385,7 @@ Copy
 
 ## 19. SWAP 文件系统
 
-```none
+```bash
 mkswap /dev/hda3 创建一个swap文件系统
 swapon /dev/hda3 启用一个新的swap文件系统
 swapon /dev/hda2 /dev/hdb3 启用两个swap分区
@@ -395,7 +395,7 @@ Copy
 
 ## 20. 备份
 
-```none
+```bash
 dump -0aj -f /tmp/home0.bak /home 制作一个 '/home' 目录的完整备份
 dump -1aj -f /tmp/home0.bak /home 制作一个 '/home' 目录的交互式备份
 restore -if /tmp/home0.bak 还原一个交互式备份
@@ -419,7 +419,7 @@ Copy
 
 ## 21. 光盘
 
-```none
+```bash
 cdrecord -v gracetime=2 dev=/dev/cdrom -eject blank=fast -force 清空一个可复写的光盘内容
 mkisofs /dev/cdrom > cd.iso 在磁盘上创建一个光盘的iso镜像文件
 mkisofs /dev/cdrom | gzip > cd_iso.gz 在磁盘上创建一个压缩了的光盘iso镜像文件
@@ -437,7 +437,7 @@ Copy
 
 ## 22. 网络（以太网和 WIFI 无线）
 
-```none
+```bash
 ifconfig eth0 显示一个以太网卡的配置
 ifup eth0 启用一个 'eth0' 网络设备
 ifdown eth0 禁用一个 'eth0' 网络设备
@@ -470,7 +470,7 @@ Copy
 
 ## 23. 列出目录内容
 
-```none
+```bash
 ls -a：显示所有文件（包括隐藏文件）；
 ls -l：显示详细信息；
 ls -R：递归显示子目录结构；
@@ -484,7 +484,7 @@ Copy
 
 ## 24. 查看文件的类型
 
-```none
+```bash
 file:查看文件的类型
 ```
 
