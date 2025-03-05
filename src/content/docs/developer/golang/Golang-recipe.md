@@ -83,3 +83,26 @@ description: A guide in my new Starlight docs site.
     ```sh
     mockgen -source=foo.go [other options]
     ```
+
+### fieldalignment
+
+- **Link**
+[更多描述](https://golangprojectstructure.com/how-to-make-go-structs-more-efficient/)
+- **Install:**
+    ```sh
+    go install golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignment@latest
+    ```
+- **Usage:** 
+    ```sh
+    fieldalignment main.go
+    ```
+
+### modernize
+
+- **介绍:**
+用于检测可以使用新版本功能的工具
+- **Install:**
+    ```sh
+    $ go run golang.org/x/tools/gopls/internal/analysis/modernize/cmd/modernize@latest -fix -test ./...
+    ```
+
